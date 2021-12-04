@@ -20,6 +20,7 @@ module.exports = {
     'object-curly-newline': ['error', { consistent: true }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'no-console': 'off',
+    "comma-dangle": ["error", "always"],
     'import/no-extraneous-dependencies': [
       'error',
       {
