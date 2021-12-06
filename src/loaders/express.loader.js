@@ -5,9 +5,9 @@ const morgan = require("morgan");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
-const {api, nodeEnv} = require("../../config");
+const {api, nodeEnv} = require("../config");
 const controllers = require("../controllers");
-const {logger, errorMiddleware, error404, errorHandler} = require("../../lib");
+const {logger, errorMiddleware, error404, errorHandler} = require("../lib");
 const models = require("../models");
 const routes = require("../routes");
 const services = require("../services");
