@@ -1,21 +1,21 @@
 const { logger } = require("../lib");
 
-class ItemController {
+class TaskController {
 	controller = null;
-	constructor(itemService) {
+	constructor(taskService) {
 		if (!this.controller) this.controller = this;
-		this.itemService = itemService;
+		this.taskService = taskService;
 		return this.controller;
 	}
 
 	async create(req, res, next) {
-		logger.info("Item Create!");
+		logger.info("task Create!");
 		let result;
 		try {
-			result = await this.itemService.create(req.body);
+			result = await this.taskService.create(req.body);
 			res.send(result);
 		} catch (error) {
-			const errorMessage = `Item Create Error: ${error}`;
+			const errorMessage = `task Create Error: ${error}`;
 			logger.error(errorMessage);
 			return next(errorMessage);
 		}
@@ -23,15 +23,15 @@ class ItemController {
 	}
 
 	async get(req, res, next) {
-		logger.info("Item get!");
+		logger.info("Task get!");
 		const { skip = 0, limit = 0 } = req.query;
 		let result;
 		try {
-			result = await this.itemService.find({ skip, limit });
+			result = await this.taskService.find({ skip, limit });
 			if (result.success === false) res.send(result);
 			res.send(result);
 		} catch (error) {
-			const errorMessage = `Item get Error: ${error}`;
+			const errorMessage = `Task get Error: ${error}`;
 			logger.error(errorMessage);
 			return next(errorMessage);
 		}
@@ -39,13 +39,13 @@ class ItemController {
 	}
 
 	async update(req, res, next) {
-		logger.info("Item update!");
+		logger.info("Task update!");
 		let result;
 		try {
-			result = await this.itemService.update(req.body);
+			result = await this.taskService.update(req.body);
 			res.send(result);
 		} catch (error) {
-			const errorMessage = `Item update Error: ${error}`;
+			const errorMessage = `Task update Error: ${error}`;
 			logger.error(errorMessage);
 			return next(errorMessage);
 		}
@@ -53,19 +53,19 @@ class ItemController {
 	}
 
 	async delete(req, res, next) {
-		logger.info("Item Delete:");
+		logger.info("Task Delete:");
 		logger.info(req.params.id);
 		const { id } = req.params;
 		let result;
 		try {
-			result = await this.itemService.delete(id);
+			result = await this.taskService.delete(id);
 			res.send(result);
 		} catch (error) {
-			logger.error(`Error Item delete Error: ${error}`);
+			logger.error(`Error Task delete Error: ${error}`);
 			return next(error);
 		}
 		return result;
 	}
 }
 
-module.exports = (itemModel) => new ItemController(itemModel);
+module.exports = (taskModel) => new TaskController(taskModel);
