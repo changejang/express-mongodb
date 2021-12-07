@@ -11,17 +11,6 @@
 // 422 Unprocessable Entity (이 응답은 서버가 요청을 이해하고 요청 문법도 올바르지만 요청된 지시를 따를 수 없음을 나타냅니다.)
 const status = require("http-status");
 
-class BaseError extends Error {
-	constructor(name, statusCode, isOperational, description) {
-		super(description);
-		Object.setPrototypeOf(this, new.target.prototype);
-		this.name = name;
-		this.statusCode = statusCode;
-		this.isOperational = isOperational;
-		Error.captureStackTrace(this);
-	}
-}
-
 class ApiError extends Error {
 	constructor(statusCode, message, isOperational = true) {
 		super(message);
@@ -33,20 +22,9 @@ class ApiError extends Error {
 	}
 }
 
-class Api404Error extends BaseError {
-	constructor(
-		name,
-		statusCode = status.NOT_FOUND,
-		description = "Not found.",
-		isOperational = true,
-	) {
-		super(name, statusCode, isOperational, description);
-	}
-}
-
 // 404 error middleware
 const error404 = (req, res, next) => {
-	const error = new Api404Error("404 Not Found1");
+	const error = new ApiError(404, "404 Not Found1");
 	error.status = 404;
 	next(error);
 };
@@ -72,15 +50,13 @@ const errorHandler = (err, req, res) => {
 };
 
 function isOperationalError(error) {
-	if (error instanceof BaseError) {
+	if (error instanceof ApiError) {
 		return error.isOperational;
 	}
 	return false;
 }
 
 module.exports = {
-	BaseError,
-	Api404Error,
 	ApiError,
 	errorMiddleware,
 	errorHandler,
