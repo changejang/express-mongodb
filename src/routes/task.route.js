@@ -8,7 +8,6 @@ module.exports = ({ app, itemController: controller }) => {
 	app.use("/item", route);
 
 	route.get("/", controller.get.bind(controller));
-	// route.post('/', createItemValidationRules, validate, controller.create.bind(controller));
 	route.post("/", controller.create.bind(controller));
 	route.put("/", controller.update.bind(controller));
 	route.delete("/:id", controller.delete.bind(controller));
