@@ -5,14 +5,14 @@ const morgan = require("morgan");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
-const {api, nodeEnv} = require("../config");
+const { api, nodeEnv } = require("../config");
 const controllers = require("../controllers");
-const {logger, errorMiddleware, error404, errorHandler} = require("../lib");
+const { logger, errorMiddleware, error404, errorHandler } = require("../lib");
 const models = require("../models");
 const routes = require("../routes");
 const services = require("../services");
 
-module.exports = async ({app}) => {
+module.exports = async ({ app }) => {
 	logger.info("Express loader!");
 
 	app.get("/status", (req, res) => {
@@ -27,7 +27,7 @@ module.exports = async ({app}) => {
 	app.use(methodOverride());
 	app.use(express.json());
 	// true 를 하면 qs 모듈을 사용하고, false 면 query-string 모듈을 사용한다.
-	app.use(express.urlencoded({extended: true}));
+	app.use(express.urlencoded({ extended: true }));
 	app.enable("trust proxy");
 	app.use(cors());
 
@@ -56,7 +56,7 @@ module.exports = async ({app}) => {
 	// 의존성을 여기서 주입!
 	const service = services(models);
 	const controller = controllers(service);
-	app.use(api.prefix, routes({controller}));
+	app.use(api.prefix, routes({ controller }));
 
 	// Error Handling
 	app.use(error404);
