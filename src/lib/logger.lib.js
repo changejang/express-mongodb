@@ -44,11 +44,6 @@ if (
 				winston.format.splat(),
 				winston.format.colorize(),
 				winston.format.simple(),
-				//   winston.format.printf((info) => {
-				//   let { timestamp, level, stack, message } = info;
-				//   message = stack || message;
-				//   return `${timestamp} ${level}: ${message}`;
-				// }),
 			),
 		}),
 	);
