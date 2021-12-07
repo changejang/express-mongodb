@@ -15,7 +15,8 @@
     "src/**/*.{js,jsx,json,tsx}": [
       "eslint --fix",
       "prettier --write",
-      "git add ."
+      "git add .",
+      "echo test"
     ]
   },
   "license": "MIT",
