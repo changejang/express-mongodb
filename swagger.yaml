@@ -1,0 +1,217 @@
+tags:
+  - name: Todo App
+    description: TODO API
+
+paths:
+  # Status
+  /status:
+    get:
+      tags:
+        - status
+      summary: Server status
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+  # Items
+  /api/item:
+    get:
+      tags:
+        - Item
+      summary: Get All Item
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+    post:
+      tags:
+        - Item
+      summary: Create Item
+      security:
+        - Bearer: []
+      parameters:
+        - name: body
+          in: body
+          description: Item Data
+          required: true
+          schema:
+            $ref: '#/definitions/items'
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+    put:
+      tags:
+        - Item
+      summary: Update Item
+      security:
+        - Bearer: [ ]
+      parameters:
+        - name: body
+          in: body
+          description: Item Data
+          required: true
+          schema:
+            $ref: '#/definitions/itemUpdate'
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+  /api/item/{id}:
+    delete:
+      tags:
+        - Item
+      summary: Delete Item
+      security:
+        - Bearer: [ ]
+      parameters:
+        - name: id
+          in: path
+          description: Delete Id
+          required: true
+
+  # Tags
+  # Users
+  /api/user:
+    get:
+      tags:
+        - Users
+      summary: User Router
+      security:
+        - Bearer: [ ]
+      response:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+  /api/auth/signin:
+    post:
+      tags:
+        - User
+      summary: Create Item
+      parameters:
+        - name: body
+          in: body
+          description: Sign-in Data
+          required: true
+          schema:
+            $ref: '#/definitions/signin'
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+  /api/auth/signup:
+    post:
+      tags:
+        - User
+      summary: Create Item
+      parameters:
+        - name: body
+          in: body
+          description: Sign-up Data
+          required: true
+          schema:
+            $ref: '#/definitions/signup'
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+# definitions
+definitions:
+  items:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      parent:
+        type: string
+      content:
+        type: string
+      priority:
+        type: integer
+      tags:
+        typs: []
+    example:
+      name: test
+      content: testContent
+      priority: 1
+      tags: []
+  itemUpdate:
+    type: object
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      parent:
+        type: string
+      content:
+        type: string
+      priority:
+        type: integer
+      tags:
+        typs: []
+    example:
+      id: 615e99e4b4de433bdc072e18
+      name: test
+      content: testContent
+      priority: 1
+      tags: []
+  signup:
+    type: object
+    required:
+      - name
+      - password
+      - email
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+    example:
+      name: TestUser
+      email: test@Gamil.com
+      password: Test123
+  signin:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    example:
+      email: test@Gamil.com
+      password: Test123
+
+
+schemes:
+  - https
+  - http
+
+securityDefinitions:
+  BasicAuth:
+    type: basic
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: X-API-Key
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
