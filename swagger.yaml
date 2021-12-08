@@ -14,12 +14,12 @@ paths:
           description: 'OK'
         500:
           description: 'Server Error'
-  # Items
-  /api/item:
+  # Task
+  /api/task:
     get:
       tags:
-        - Item
-      summary: Get All Item
+        - Task
+      summary: Get All Task
       security:
         - Bearer: []
       responses:
@@ -29,8 +29,8 @@ paths:
           description: 'Server Error'
     post:
       tags:
-        - Item
-      summary: Create Item
+        - Task
+      summary: Create Task
       security:
         - Bearer: []
       parameters:
