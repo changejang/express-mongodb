@@ -36,10 +36,10 @@ paths:
       parameters:
         - name: body
           in: body
-          description: Item Data
+          description: Task Data
           required: true
           schema:
-            $ref: '#/definitions/items'
+            $ref: '#/definitions/task'
       responses:
         200:
           description: 'OK'
@@ -47,23 +47,23 @@ paths:
           description: 'Server Error'
     put:
       tags:
-        - Item
-      summary: Update Item
+        - Task
+      summary: Update Task
       security:
         - Bearer: [ ]
       parameters:
         - name: body
           in: body
-          description: Item Data
+          description: Task Data
           required: true
           schema:
-            $ref: '#/definitions/itemUpdate'
+            $ref: '#/definitions/taskUpdate'
       responses:
         200:
           description: 'OK'
         500:
           description: 'Server Error'
-  /api/item/{id}:
+  /api/task/{id}:
     delete:
       tags:
         - Item
