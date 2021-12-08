@@ -32,7 +32,6 @@ module.exports = async ({ app }) => {
 	app.use(cors());
 
 	if (nodeEnv === "local") {
-		// Swagger.
 		const options = {
 			swaggerDefinition: {
 				info: {
