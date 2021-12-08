@@ -66,8 +66,8 @@ paths:
   /api/task/{id}:
     delete:
       tags:
-        - Item
-      summary: Delete Item
+        - Task
+      summary: Delete Task
       security:
         - Bearer: [ ]
       parameters:
@@ -95,7 +95,7 @@ paths:
     post:
       tags:
         - User
-      summary: Create Item
+      summary: Sign in
       parameters:
         - name: body
           in: body
@@ -112,7 +112,7 @@ paths:
     post:
       tags:
         - User
-      summary: Create Item
+      summary: Sign Up
       parameters:
         - name: body
           in: body
@@ -127,7 +127,7 @@ paths:
           description: 'Server Error'
 # definitions
 definitions:
-  items:
+  task:
     type: object
     required:
       - name
@@ -147,7 +147,7 @@ definitions:
       content: testContent
       priority: 1
       tags: []
-  itemUpdate:
+  taskUpdate:
     type: object
     required:
       - name
