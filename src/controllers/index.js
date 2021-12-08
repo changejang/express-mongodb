@@ -1,7 +1,10 @@
 const authController = require("./auth.controller");
 const taskController = require("./task.controller");
 
-module.exports = (service) => ({
-	authController: authController(service.authService),
-	taskController: taskController(service.taskService),
-});
+module.exports = (service) => {
+	const { authService, taskService } = service;
+	return {
+		authController: authController(authService),
+		taskController: taskController(taskService),
+	};
+};
