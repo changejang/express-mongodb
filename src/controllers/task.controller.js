@@ -52,6 +52,38 @@ class TaskController {
 		return result;
 	}
 
+	async getById(req, res, next) {
+		logger.info("Item get!");
+		const { id } = req.params;
+		let result;
+		try {
+			result = await this.taskService.findById(id);
+			if (result.success === false) res.send(result);
+			res.send(result);
+		} catch (error) {
+			const errorMessage = `Item get Error: ${error}`;
+			logger.error(errorMessage);
+			return next(errorMessage);
+		}
+		return result;
+	}
+
+	async getByShortId(req, res, next) {
+		logger.info("Item get!");
+		const { id } = req.params;
+		let result;
+		try {
+			result = await this.taskService.findByShortId(id);
+			if (result.success === false) res.send(result);
+			res.send(result);
+		} catch (error) {
+			const errorMessage = `Item get Error: ${error}`;
+			logger.error(errorMessage);
+			return next(errorMessage);
+		}
+		return result;
+	}
+
 	async delete(req, res, next) {
 		logger.info("Task Delete:");
 		logger.info(req.params.id);

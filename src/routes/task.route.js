@@ -3,9 +3,9 @@ const { logger } = require("../lib");
 
 const route = Router();
 
-module.exports = ({ app, itemController: controller }) => {
+module.exports = ({ app, taskController: controller }) => {
 	logger.info("Start Item Router!");
-	app.use("/item", route);
+	app.use("/task", route);
 
 	route.get("/", controller.get.bind(controller));
 	route.post("/", controller.create.bind(controller));

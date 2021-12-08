@@ -4,7 +4,7 @@ const ShortUniqueId = require("short-unique-id");
 
 const createShortId = new ShortUniqueId({ length: 5 });
 
-const Item = new mongoose.Schema(
+const Task = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -39,10 +39,10 @@ const Item = new mongoose.Schema(
 	},
 );
 
-Item.pre("save", function save(next) {
+Task.pre("save", function save(next) {
 	const shortId = createShortId();
 	this.set({ shortId });
 	next();
 });
 
-module.exports = mongoose.model("Item", Item);
+module.exports = mongoose.model("Task", Task);

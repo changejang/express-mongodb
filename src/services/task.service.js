@@ -13,7 +13,7 @@ class TaskService {
 		let result;
 		let success = false;
 		try {
-			const data = await this.itemModel.create({ body });
+			const data = await this.taskModel.create({ body });
 			if (data) success = true;
 			result = { success, data };
 		} catch (error) {
@@ -82,6 +82,20 @@ class TaskService {
 
 		try {
 			const data = await this.taskModel.findById({ id });
+			result = { success: true, data };
+		} catch (error) {
+			logger.error(`Error!: ${error}`);
+			result = { success: false, error };
+		}
+		return result;
+	}
+
+	async findByShortId(shortId) {
+		logger.info("Item Service FindByShortId");
+		let result;
+
+		try {
+			const data = await this.taskModel.findByShortId({ shortId });
 			result = { success: true, data };
 		} catch (error) {
 			logger.error(`Error!: ${error}`);
