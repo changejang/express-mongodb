@@ -52,7 +52,6 @@ module.exports = async ({ app }) => {
 
 	logger.info(`router: ${api.prefix}`);
 
-	// 의존성을 여기서 주입!
 	const service = services(models);
 	const controller = controllers(service);
 	app.use(api.prefix, routes({ controller }));
