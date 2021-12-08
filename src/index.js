@@ -1,1 +1,24 @@
-console.log('d');
+const express = require("express");
+
+const { port } = require("./config");
+const { load } = require("./loaders");
+const { logger } = require("./lib");
+
+const startServer = async () => {
+	logger.info(`Start Server! ${port}`);
+	const app = express();
+	await load({
+		expressApp: app,
+	});
+	app.listen(port, (err) => {
+		if (err) {
+			logger.error(err);
+			process.exit(1);
+		}
+		logger.info(`Server listening on port: ${port}`);
+	});
+};
+
+(async () => {
+	await startServer();
+})();
