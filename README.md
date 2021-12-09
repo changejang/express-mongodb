@@ -5,6 +5,9 @@
 ### TaskRoute
 
 ## Controller
+### AuthController
+### TaskController
+
 ## Service
 ## Model
 ## Config
