@@ -1,7 +1,7 @@
 # express-mongodb
-Express
-MongoDB
-Swagger
+Express/
+MongoDB/
+Swagger/
 
 ## Loader
 ## ExpressLoader
