@@ -2,6 +2,7 @@
 Express/
 MongoDB/
 Swagger/
+Jest/
 
 ## Loader
 ## ExpressLoader
