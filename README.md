@@ -4,6 +4,8 @@ MongoDB/
 Swagger/
 Jest/
 
+# Getting Stared
+- Update environment variables for *local*, *development* and *production* environments (/env)
 ## Loader
 ## ExpressLoader
 ## MongooseLoader
