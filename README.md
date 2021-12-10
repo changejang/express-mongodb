@@ -8,6 +8,7 @@ Jest/
 - Update environment variables for *local*, *development* and *production* environments (/env)
 - Install project dependencies — yarn install
 - launch the app — yarn *local*(env)
+
 ## Loader
 ## ExpressLoader
 ## MongooseLoader
