@@ -10,7 +10,8 @@ Jest/
 - launch the app — yarn *local*(env)
 
 ## Scripts
-
+- `yarn local` - Launches the app in local on `http://localhost: launch the app — yarn start`
+- `yarn prod` - 
 
 ## Loader
 ## ExpressLoader
