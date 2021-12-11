@@ -43,3 +43,6 @@ Jest/
 ### Logger
 ### Error
 
+
+[node-starter-kit](https://github.com/kriasoft/node-starter-kit)
+[boilrplate](http://www.boilrplate.com/language/nodejs)
