@@ -2,6 +2,7 @@ module.exports = {
 	tabWidth: 2,
 	useTabs: true,
 	semi: true,
+	sourceType: "module",
 	// singleQuote: true,
 	// jsxSingleQuote: true, // JSX에서 singleQuote or doubleQuote
 	endOfLine: "lf",

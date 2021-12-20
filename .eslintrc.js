@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	env: {
 		browser: true,
 		es6: true,
@@ -9,16 +9,17 @@ module.exports = {
 	rules: {
 		// indent: ["error", 2, {SwitchCase: 1}],
 		"no-underscore-dangle": "off",
-		"no-param-reassign": ["error", {props: false}],
+		"no-param-reassign": ["error", { props: false }],
 		"no-mixed-operators": "off",
 		"no-restricted-syntax": "off",
 		"no-await-in-loop": "off",
 		"no-unused-vars": "warn",
 		"no-plusplus": "off",
 		"no-continue": "off",
+		"no-import-module-exports": "off",
 		"global-require": "off",
-		"object-curly-newline": ["error", {consistent: true}],
-		"prefer-destructuring": ["error", {object: true, array: false}],
+		"object-curly-newline": ["error", { consistent: true }],
+		"prefer-destructuring": ["error", { object: true, array: false }],
 		"no-console": "off",
 		"comma-dangle": ["error", "always-multiline"],
 		"import/no-extraneous-dependencies": [
