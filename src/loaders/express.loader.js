@@ -1,16 +1,16 @@
-const cors = require("cors");
-const express = require("express");
-const methodOverride = require("method-override");
-const morgan = require("morgan");
-const swaggerJSDoc = require("swagger-jsdoc");
-const swaggerUi = require("swagger-ui-express");
+import cors from 'cors';
+import express from 'express';
+import methodOverride from("method-override");
+import morgan from("morgan");
+import swaggerJSDoc from("swagger-jsdoc");
+import swaggerUi from("swagger-ui-express");
 
-const { api, nodeEnv } = require("../config");
-const controllers = require("../controllers");
-const { logger, errorMiddleware, error404, errorHandler } = require("../lib");
-const models = require("../models");
-const routes = require("../routes");
-const services = require("../services");
+import { api, nodeEnv } from("../config");
+import controllers from("../controllers");
+import { logger, errorMiddleware, error404, errorHandler } from("../lib");
+import models from("../models");
+import routes from("../routes");
+import services from("../services");
 
 module.exports = async ({ app }) => {
 	logger.info("Express loader!");
