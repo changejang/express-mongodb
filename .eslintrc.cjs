@@ -1,9 +1,13 @@
 module.exports = {
 	env: {
 		browser: true,
-		es6: true,
+		es2021: true,
 		node: true,
 		jquery: true,
+	},
+	parserOptions: {
+		ecmaVersion: 12,
+		sourceType: 'module',
 	},
 	extends: ["eslint:recommended", "airbnb-base", "prettier"],
 	rules: {
@@ -22,6 +26,9 @@ module.exports = {
 		"prefer-destructuring": ["error", { object: true, array: false }],
 		"no-console": "off",
 		"comma-dangle": ["error", "always-multiline"],
+		'import/extensions': [ 'off', ], // 확장자 있어도 괜찮게
+		'import/prefer-default-export': 'off',
+		"import/no-unresolved": "off",
 		"import/no-extraneous-dependencies": [
 			"error",
 			{

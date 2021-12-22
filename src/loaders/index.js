@@ -9,6 +9,6 @@ const load = async ({ expressApp }) => {
 	logger.info("Express loaded");
 };
 
-export default {
+export {
 	load,
 };

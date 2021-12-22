@@ -107,7 +107,7 @@ class Model {
 	}
 }
 
-export default  {
+export {
 	taskModel: new Model(taskModel),
 	userModel: new Model(userModel),
 };
