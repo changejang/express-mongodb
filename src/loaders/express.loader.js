@@ -12,7 +12,7 @@ import models from "../models";
 import routes from "../routes";
 import services from "../services";
 
-module.exports = async ({ app }) => {
+export default async ({ app }) => {
 	logger.info("Express loader!");
 
 	app.get("/status", (req, res) => {
