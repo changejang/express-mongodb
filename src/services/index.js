@@ -1,7 +1,7 @@
-const authService = require("./auth.service");
-const taskService = require("./task.service");
+import authService from "./auth.service";
+import taskService from "./task.service";
 
-module.exports = (model) => {
+export default (model) => {
 	const { userModel, taskModel } = model;
 	return {
 		authService: authService(userModel),

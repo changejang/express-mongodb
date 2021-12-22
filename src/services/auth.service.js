@@ -1,10 +1,10 @@
-const jwt = require("jsonwebtoken");
-const { pick } = require("lodash");
-const argon2 = require("argon2");
-const { randomBytes } = require("crypto");
+import jwt from "jsonwebtoken";
+import { pick } from "lodash";
+import argon2 from "argon2";
+import { randomBytes } from "crypto";
 
-const { jwtSecret, jwtAlgo, accessTokenDate } = require("../config");
-const { logger } = require("../lib");
+import { jwtSecret, jwtAlgo, accessTokenDate } from "../config";
+import { logger } from "../lib";
 
 const SIGN_IN_RESULT = ["name", "email", "role", "createdAt", "updatedAt"];
 const SIGN_UP_RESULT = ["name", "email", "role"];
@@ -98,4 +98,4 @@ class AuthService {
 	async refresh() {}
 }
 
-module.exports = (userModel) => new AuthService(userModel);
+export default (userModel) => new AuthService(userModel);

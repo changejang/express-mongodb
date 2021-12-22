@@ -1,9 +1,9 @@
-const { Router } = require("express");
-const { logger } = require("../lib");
+import { Router } from "express";
+import { logger } from "../lib";
 
 const route = Router();
 
-module.exports = ({ app, taskController: controller }) => {
+export default ({ app, taskController: controller }) => {
 	logger.info("Start Item Router!");
 	app.use("/task", route);
 

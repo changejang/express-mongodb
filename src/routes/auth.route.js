@@ -1,9 +1,9 @@
-const { Router } = require("express");
-const { logger } = require("../lib");
+import { Router } from "express";
+import { logger } from "../lib";
 
 const route = Router();
 
-module.exports = ({ app, authController: controller }) => {
+export default ({ app, authController: controller }) => {
 	logger.info("Start Auth Router!");
 	app.use("/auth", route);
 

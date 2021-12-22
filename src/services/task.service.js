@@ -1,4 +1,4 @@
-const { logger } = require("../lib");
+import { logger } from "../lib";
 
 class TaskService {
 	instance = null;
@@ -105,4 +105,4 @@ class TaskService {
 	}
 }
 
-module.exports = (taskModel) => new TaskService(taskModel);
+export default (taskModel) => new TaskService(taskModel);
