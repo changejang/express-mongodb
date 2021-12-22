@@ -1,7 +1,7 @@
-const error = require("./error.lib");
-const logger = require("./logger.lib");
+import error from "./error.lib";
+import logger from "./logger.lib";
 
-module.exports = {
+export default {
 	...logger,
 	...error,
 };

@@ -1,6 +1,6 @@
-const winston = require("winston");
+import winston from "winston";
 
-const config = require("../config");
+import config from "../config";
 
 const transports = [];
 const logLevels = {
@@ -55,6 +55,6 @@ const logger = winston.createLogger({
 	transports,
 });
 
-module.exports = {
+export default {
 	logger,
 };

@@ -1,4 +1,4 @@
-const { logger } = require("../lib");
+import { logger } from "../lib";
 
 class AuthController {
 	instance = null;
@@ -46,4 +46,4 @@ class AuthController {
 	async refresh() {}
 }
 
-module.exports = (authService) => new AuthController(authService);
+export default (authService) => new AuthController(authService);

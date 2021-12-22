@@ -1,4 +1,4 @@
-const { logger } = require("../lib");
+import { logger } from "../lib";
 
 class TaskController {
 	controller = null;
@@ -100,4 +100,4 @@ class TaskController {
 	}
 }
 
-module.exports = (taskModel) => new TaskController(taskModel);
+export default (taskModel) => new TaskController(taskModel);

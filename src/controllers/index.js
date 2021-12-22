@@ -1,7 +1,7 @@
-const authController = require("./auth.controller");
-const taskController = require("./task.controller");
+import authController from "./auth.controller";
+import taskController from "./task.controller";
 
-module.exports = (service) => {
+export default  (service) => {
 	const { authService, taskService } = service;
 	return {
 		authController: authController(authService),

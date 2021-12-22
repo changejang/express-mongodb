@@ -9,7 +9,7 @@
 //   INTERNAL_SERVER: 500
 // };
 // 422 Unprocessable Entity (이 응답은 서버가 요청을 이해하고 요청 문법도 올바르지만 요청된 지시를 따를 수 없음을 나타냅니다.)
-const status = require("http-status");
+import status from "http-status";
 
 class ApiError extends Error {
 	constructor(statusCode, message, isOperational = true) {
@@ -56,7 +56,7 @@ function isOperationalError(error) {
 	return false;
 }
 
-module.exports = {
+export default {
 	ApiError,
 	errorMiddleware,
 	errorHandler,

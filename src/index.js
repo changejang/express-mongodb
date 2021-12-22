@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 
-const { port } = require("./config");
-const { load } = require("./loaders");
-const { logger } = require("./lib");
+import { port } from "./config";
+import { load } from "./loaders";
+import { logger }from"./lib";
 
 const startServer = async () => {
 	logger.info(`Start Server! ${port}`);
