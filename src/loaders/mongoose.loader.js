@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const config = require("../config");
-const {logger} = require("../lib");
+import mongoose from "mongoose";
+import config from "../config";
+import {logger} from "../lib";
 
 mongoose.Promise = global.Promise;
 
@@ -13,4 +13,4 @@ const mongooseConnection = async () => {
 	}
 };
 
-module.exports = mongooseConnection;
+export default  mongooseConnection;

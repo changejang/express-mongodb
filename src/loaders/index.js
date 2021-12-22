@@ -1,6 +1,6 @@
-const expressLoader = require("./express.loader");
-const mongooseLoader = require("./mongoose.loader");
-const { logger } = require("../lib");
+import expressLoader from "./express.loader";
+import mongooseLoader from "./mongoose.loader";
+import { logger } from "../lib";
 
 const load = async ({ expressApp }) => {
 	logger.info("DB");
@@ -9,6 +9,6 @@ const load = async ({ expressApp }) => {
 	logger.info("Express loaded");
 };
 
-module.exports = {
+export default {
 	load,
 };

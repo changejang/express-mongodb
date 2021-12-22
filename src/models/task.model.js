@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-const { ObjectId } = require("mongoose");
-const ShortUniqueId = require("short-unique-id");
+import mongoose, { ObjectId } from "mongoose";
+import ShortUniqueId from "short-unique-id";
 
 const createShortId = new ShortUniqueId({ length: 5 });
 
@@ -45,4 +44,4 @@ Task.pre("save", function save(next) {
 	next();
 });
 
-module.exports = mongoose.model("Task", Task);
+export default mongoose.model("Task", Task);

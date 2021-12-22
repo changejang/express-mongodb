@@ -1,6 +1,6 @@
-const { logger } = require("../lib");
-const taskModel = require("./task.model");
-const userModel = require("./user.model");
+import { logger } from "../lib";
+import taskModel from "./task.model";
+import userModel from "./user.model";
 
 class Model {
 	constructor(model) {
@@ -107,7 +107,7 @@ class Model {
 	}
 }
 
-module.exports = {
+export default  {
 	taskModel: new Model(taskModel),
 	userModel: new Model(userModel),
 };
