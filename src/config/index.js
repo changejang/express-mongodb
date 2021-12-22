@@ -12,21 +12,21 @@ if (evnFound.error) {
 	throw new Error("Couldn't find .env file");
 }
 
-export const port = parseInt(PORT, 10);
-export const nodeEnv = NODE_ENV.toLowerCase();
-export const databaseURL = MONGODB_URI;
-export const logs = {
+const port = parseInt(PORT, 10);
+const nodeEnv = NODE_ENV.toLowerCase();
+const databaseURL = MONGODB_URI;
+const logs = {
 	level: LOG_LEVEL.toLowerCase() || "local",
 };
 
-export const api = {
+const api = {
 	prefix: "/api",
 };
 
-// module.exports = {
-// 	port,
-// 	nodeEnv,
-// 	databaseURL,
-// 	logs,
-// 	api,
-// };
+export default {
+	port,
+	nodeEnv,
+	databaseURL,
+	logs,
+	api,
+};

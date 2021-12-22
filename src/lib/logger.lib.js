@@ -1,6 +1,6 @@
 import winston from "winston";
 
-import config from "../config";
+import { logs } from "../config";
 
 const transports = [];
 const logLevels = {
@@ -50,7 +50,7 @@ if (
 }
 
 const logger = winston.createLogger({
-	level: config.logs.level,
+	level: logs.level,
 	levels: logLevels.levels,
 	transports,
 });
