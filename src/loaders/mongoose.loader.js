@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import config from "../config";
+import { databaseURL } from "../config";
 import {logger} from "../lib";
 
 mongoose.Promise = global.Promise;
@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 const mongooseConnection = async () => {
 	logger.info("Mongoose loader!");
 	try {
-		await mongoose.connect(config.databaseURL);
+		await mongoose.connect(databaseURL);
 	} catch (error) {
 		logger.error(error);
 	}

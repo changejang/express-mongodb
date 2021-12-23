@@ -1,7 +1,7 @@
 import express from "express";
 
 import { port } from "./config";
-import { load } from "./loaders";
+import load from "./loaders";
 import { logger }from"./lib";
 
 const startServer = async () => {

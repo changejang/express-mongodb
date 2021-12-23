@@ -109,7 +109,7 @@ class Model {
 
 const taskModel = new Model(task);
 const userModel =  new Model(user);
-export {
+export default {
 	taskModel,
 	userModel,
 };

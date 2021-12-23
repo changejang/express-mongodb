@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { logger } from "../lib";
 
-const task = require("./task.route");
+import task from "./task.route";
 
 export default ({ controller }) => {
 	logger.info("Start! route!");

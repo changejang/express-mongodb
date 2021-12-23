@@ -1,5 +1,7 @@
-import mongoose, { ObjectId } from "mongoose";
+import mongoose from "mongoose";
 import ShortUniqueId from "short-unique-id";
+
+const { ObjectId } = mongoose;
 
 const createShortId = new ShortUniqueId({ length: 5 });
 

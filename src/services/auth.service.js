@@ -1,9 +1,11 @@
 import jwt from "jsonwebtoken";
-import { pick } from "lodash";
+import _ from 'lodash';
+const { pick } = _;
+
 import argon2 from "argon2";
 import { randomBytes } from "crypto";
 
-import { jwtSecret, jwtAlgo, accessTokenDate } from "../config";
+// import { jwtSecret, jwtAlgo, accessTokenDate } from "../config";
 import { logger } from "../lib";
 
 const SIGN_IN_RESULT = ["name", "email", "role", "createdAt", "updatedAt"];
