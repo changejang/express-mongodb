@@ -1,6 +1,6 @@
 import { logger } from "../lib";
-import taskModel from "./task.model";
-import userModel from "./user.model";
+import task from "./task.model";
+import user from "./user.model";
 
 class Model {
 	constructor(model) {
@@ -107,7 +107,9 @@ class Model {
 	}
 }
 
+const taskModel = new Model(task);
+const userModel =  new Model(user);
 export {
-	taskModel: new Model(taskModel),
-	userModel: new Model(userModel),
+	taskModel,
+	userModel,
 };

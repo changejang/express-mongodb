@@ -56,7 +56,7 @@ function isOperationalError(error) {
 	return false;
 }
 
-export default {
+export {
 	ApiError,
 	errorMiddleware,
 	errorHandler,
