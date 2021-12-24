@@ -46,3 +46,7 @@ Jest/
 
 [node-starter-kit](https://github.com/kriasoft/node-starter-kit)
 [boilrplate](http://www.boilrplate.com/language/nodejs)
+
+
+# TODO
+[] Class로 변경
