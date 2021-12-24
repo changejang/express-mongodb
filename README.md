@@ -49,4 +49,6 @@ Jest/
 
 
 # TODO
-[] Class로 변경
+- [ ] Class로 변경
+- [ ] 배포 Script 변경
+- 
