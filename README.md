@@ -52,4 +52,3 @@ Jest/
 - [ ] Class로 변경
 - [ ] 배포 Script 변경
 - [x] t
-- 
